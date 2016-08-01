@@ -35,6 +35,6 @@ We've captured many of the most useful commands in npm scripts defined in the `p
 Running the test command, compiles the application, then simultaneously re-compiles and runs the karma test-runner.
 Both the compiler and the karma watch for (different) file changes.
 
-An HTML report is available  in `~_test-output/tests.html`.
+A HTML report is available  in `~_test-output/tests.html`.
 
 When ready, shut it down manually with Ctrl-C.
