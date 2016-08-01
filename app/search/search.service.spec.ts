@@ -1,15 +1,14 @@
-import { describe, expect, inject, async, it, addProviders, afterEach, beforeEach, beforeEachProviders } from '@angular/core/testing';
+import { inject } from '@angular/core/testing';
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
-import { SearchService } from './index'
+import { SearchService } from './'
 
-describe('SearchService Injected', () => {
+describe('SearchService', () => {
 
-  beforeEach(() => {
-    addProviders([SearchService])
-  });
-
-  it('should have an instance', inject([SearchService], (searchService: SearchService) => {
-    expect(searchService).not.toBe(null);
+  it('should have name property set', inject([SearchService], (testService: SearchService) => {
+    expect(testService).toBe('Mocked Service');
   }));
 
 });

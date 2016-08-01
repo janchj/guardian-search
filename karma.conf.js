@@ -46,6 +46,9 @@ module.exports = function(config) {
       // pagination
       {pattern: 'node_modules/ng2-pagination/**/*.js', included: false, watched: false},
 
+      // notifications
+      {pattern: 'node_modules/angular2-notifications/**/*.js', included: false, watched: false},
+
       {pattern: 'systemjs.config.js', included: false, watched: false},
       'karma-test-shim.js',
 
