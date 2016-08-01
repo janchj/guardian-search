@@ -4,15 +4,8 @@ Search engine for news articles from the [API of The Guardian newspaper](http://
 
 ## Prerequisites
 
-Node.js and npm are essential.
+[Node.js](https://docs.npmjs.com/getting-started/installing-node) and [npm](https://docs.npmjs.com/getting-started/installing-node) are essential.
     
-<a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">
-Get it now</a> if it's not already installed on your machine.
- 
-**Verify that you are running at least node `v5.x.x` and npm `3.x.x`**
-by running `node -v` and `npm -v` in a terminal/console window.
-Older versions produce errors.
-
 ## Install npm packages
 
 > See npm and nvm version notes above
