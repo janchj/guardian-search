@@ -2,10 +2,6 @@ import { describe, expect, inject, async, it, addProviders, afterEach, beforeEac
 
 import { SearchService } from './index'
 
-describe('SearchService', () => {
-
-});
-
 describe('SearchService Injected', () => {
 
   beforeEach(() => {

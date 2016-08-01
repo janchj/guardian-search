@@ -1,5 +1,6 @@
 import { Component, Input, Output } from '@angular/core';
 import * as _ from 'lodash';
+
 import { PaginationControlsCmp, PaginatePipe, PaginationService, IPaginationInstance } from 'ng2-pagination';
 import { SimpleNotificationsComponent, NotificationsService } from 'angular2-notifications';
 
@@ -50,7 +51,7 @@ export class SearchComponent {
     this._searchService.getResultsByKeywords(this.keywords, this.config.itemsPerPage, this.config.currentPage)
       .then((results) => {
 
-console.log(results);
+        console.log(results);
         // if status ok, then get the results
         if (results.response.status === "ok") {
           this.results = results.response.results;
