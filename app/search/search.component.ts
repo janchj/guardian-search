@@ -5,6 +5,7 @@ import { PaginationControlsCmp, PaginatePipe, PaginationService, IPaginationInst
 import { SimpleNotificationsComponent, NotificationsService } from 'angular2-notifications';
 
 import { SearchService } from './search.service';
+import { TrailTextPipe } from './trailtext-pipe';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +13,7 @@ import { SearchService } from './search.service';
   templateUrl: 'search.component.html',
   providers: [PaginationService, NotificationsService],
   directives: [PaginationControlsCmp, SimpleNotificationsComponent],
-  pipes: [PaginatePipe]
+  pipes: [PaginatePipe, TrailTextPipe]
 })
 
 export class SearchComponent {
@@ -51,11 +52,18 @@ export class SearchComponent {
     this._searchService.getResultsByKeywords(this.keywords, this.config.itemsPerPage, this.config.currentPage)
       .then((results) => {
 
-        console.log(results);
         // if status ok, then get the results
-        if (results.response.status === "ok") {
-          this.results = results.response.results;
-          this.config.totalItems = results.response.pages;
+        if (results.response.status === 'ok') {
+
+          // if no results, show message to user
+          if (results.response.total > 0) {
+            this.results = results.response.results;
+            this.config.totalItems = results.response.pages;
+          } else {
+            this.handleInfo('Sorry! no articles match your search. Maybe try a different set of keywords?')
+          }
+
+
         }
       })
       .catch((err) => {
@@ -74,12 +82,23 @@ export class SearchComponent {
     this.search();
   }
 
+  extractAttributesFromResponse(response: any) {
+    var objB = _.map(response, ['webUrl', 'webTitle', 'sectionName']);
+    console.log(objB);
+  }
+
   // handle errors and show a message to user
   private handleError(error: any) {
     let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg); // logging
     return this._notificationService.info('Ooops!', errMsg); // show user friendly message
+  }
+
+  // handle errors and show a message to user
+  private handleInfo(info: any) {
+    //console.error(info); // logging?
+    return this._notificationService.info('Ooops!', info); // show user friendly message
   }
 
 }

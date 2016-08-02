@@ -32,7 +32,7 @@
     <ul class="list-group search-results">
       <li class="list-group-item" *ngFor="let item of results | paginate: config">
         <a href={{item.webUrl}} target="_blank"><b>{{item.webTitle}}</b></a>
-        <p class="result-summary">{{item.fields.trailText || 'Summary not available' }}</p>
+        <p class="result-summary">{{item.fields.trailText | TrailTextPipe }}</p>
         <p class="result-section">{{item.sectionName || 'Section not available'}}</p>
       </li>
     </ul>
