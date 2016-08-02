@@ -2,6 +2,9 @@
 
 Search engine for news articles from the [API of The Guardian newspaper](http://open-platform.theguardian.com/documentation/).
 
+Single page application that retrieves all articles that match provided keywords.
+Results are paginated showing 5 results/page, displaying article's title, summary, section and a hyperlink to view more details.
+
 ## Prerequisites
 
 [Node.js](https://docs.npmjs.com/getting-started/installing-node) and [npm](https://docs.npmjs.com/getting-started/installing-node) are essential.
