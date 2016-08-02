@@ -36,6 +36,7 @@ module.exports = function(config) {
 
       // RxJs.
       //{ pattern: 'node_modules/rxjs/bundles/rx.js', included: true, watched: true },
+      { pattern: 'node_modules/rxjs/add/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
 
